@@ -1,4 +1,4 @@
-# Home-Ranges
+# Home Range Estimation
 
 ## CONTENT 
  
