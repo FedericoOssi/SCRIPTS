@@ -4,7 +4,7 @@ Each markdown (md) focusses on a certain topic:
 
 * [Home range estimation methods](HOME_RANGE_ESTIMATION.md)
 
-** [mcp](HOME_RANGE_ESTIMATION.md)
+  * [mcp](HOME_RANGE_ESTIMATION.md)
 
 [kernel](HOME_RANGE_ESTIMATION.md)
 
