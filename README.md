@@ -1,6 +1,6 @@
 # Home-Ranges
 
-![images/hr.png]
+![images/hr.jpg]
 
 
 ## CONTENT 
