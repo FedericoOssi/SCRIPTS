@@ -29,7 +29,7 @@ v <- c(1:200)
 v <- c(1:200) 
 ```
 
-## BrownianBridge 
+## Brownian Bridge 
 
 **Individual BB**  
 ```R
