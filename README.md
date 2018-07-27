@@ -1,6 +1,6 @@
 # Home-Ranges
 
-![](images/hr.jpg)
+![](images/hr.jpg =20x20)
 
 
 ## CONTENT 
