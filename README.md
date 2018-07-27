@@ -6,7 +6,7 @@
 * [MCP](#MCP)
 * [kernel](#kernel)
 * [tlocoh](#tlocoh)
-* [Brownian Bridge](#BrownianBridge)
+* [BrownianBridge](#Brownian Bridge)
 
 ## MCP
 
