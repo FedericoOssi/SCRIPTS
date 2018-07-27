@@ -1,8 +1,5 @@
 # Home-Ranges
 
-![](images/hr.jpg =20x20)
-
-
 ## CONTENT 
  
 * [MCP](#MCP)
@@ -45,3 +42,5 @@ v <- c(1:200)
 ```
 
 ###### [-to content-](#content)
+
+![](images/hr.jpg)
