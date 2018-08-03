@@ -2,7 +2,7 @@
 
 ## CONTENT 
  
-* [MCP](#MCP)
+* [mcp](#mcp)
 * [kernel](#kernel)
 * [tlocoh](#tlocoh)
 * [brownianbridge](#brownianbridge)
