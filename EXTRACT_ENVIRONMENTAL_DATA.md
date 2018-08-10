@@ -24,7 +24,7 @@ pgPostGIS(con) # test connection
 
 ### Points - Import ###  
 locs4326 <- pgGetGeom(con, c("main","gps_data_animals"), geom = "geom", clauses = "WHERE animals_id in (1,2,3,4,5) and gps_validity_code = 1") # import gps locations
-head(locs@data) # view first rows 
+head(locs4326@data) # view first rows 
 locs3035 <- spTransform(gpsdata,"+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs") # transform to SRID 3035
 
 ### Polygon - Import ### Extract a bounding box from the db using the corresponding gps locations 
