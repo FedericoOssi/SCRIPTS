@@ -1,8 +1,6 @@
 # Extract environmental data 
 
-Here we describe how to extract environmental information from some european raster layers in R.
-The specific example is especially suited if environmental data needs to be extracted from a large raster layer.
-This script shows the functionality of several spatial functions such as [spTransform](https://www.rdocumentation.org/packages/sp/versions/1.3-1/topics/spTransform), [buffer](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/buffer), [crop](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/crop), [mask](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/mask) and [extract](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/extract). To extract values for spatial points efficiently, the area of interest should first be extracted through a crop and mask function in R. 
+Here we describe how to extract environmental information from raster layers in R for points and polygons. The specific example is especially suited if local environmental data needs to be extracted from a large raster layer. This script shows the functionality of several spatial functions such as [spTransform](https://www.rdocumentation.org/packages/sp/versions/1.3-1/topics/spTransform), [buffer](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/buffer), [crop](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/crop), [mask](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/mask) and [extract](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/extract). To extract values for spatial points efficiently, the area of interest should first be extracted through a crop and mask function in R. 
 
 The raster layers can be downloaded through the following links: 
 * [DEM - Copernicus](https://land.copernicus.eu/pan-european/satellite-derived-products/eu-dem/eu-dem-v1-0-and-derived-products/view "Digital Elevation Model")
@@ -10,11 +8,9 @@ The raster layers can be downloaded through the following links:
 
 ## CONTENT 
 
-* [r](#r)
-  * [rpolygon](#rpolygon)
-  * [rpoints](#rpoints)
+  * [polygon](#rpolygon)
+  * [points](#rpoints)
 
-## r
 #### Import points, polygon and raster
 ```R
 ### Load packages ###
