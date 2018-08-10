@@ -28,7 +28,7 @@ con <- dbConnect(drv, dbname="eurodeer_db", host="<host>",port="5432", user="<my
 **rpostgis**  
 ```R
 library(rpostgis)
-con <- dbConnect("PostgreSQL", dbname="eurodeer_db", host="5432", user="<myname>", password="<mypass>") 
+con <- dbConnect("PostgreSQL", dbname="eurodeer_db", host="<host>", user="<myname>", password="<mypass>") 
 pgPostGIS(con) # test connection
 ```
 
