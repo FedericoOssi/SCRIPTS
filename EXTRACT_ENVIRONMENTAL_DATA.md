@@ -39,6 +39,10 @@ rast <- raster("forest_density.tif") # change the name and set the correct work 
 ### Polygon - Extract ### 
 rast_c <- crop(rast, boundary) # crop the area using boundary
 rast_m <- mask(rast_c, boundary) # mask using boundary 
+
+### Polygon - Extract raster from database ###
+# If the raster is available within a database also the function pgGetRast can be used instead
+rast_m <- pgGetRast(con, c("env_data", "forest_density"), boundary = pol)
 ```
 #### points 
 ```R
