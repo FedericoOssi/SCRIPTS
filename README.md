@@ -8,7 +8,7 @@ Each markdown (md) focusses on a certain topic:
   * [tlocoh](HOME_RANGE_ESTIMATION.md)
   * [brownian bridge](HOME_RANGE_ESTIMATION.md)
 
-*keywords: HRE, adehabitatHR, move, polygons*
+***Keywords:** HRE, adehabitatHR, move, polygons*
 
 * [database access](DATABASE_ACCESS.md)
 
@@ -17,11 +17,11 @@ Each markdown (md) focusses on a certain topic:
   * [grass](DATABASE_ACCESS.md)
   * [qgis](DATABASE_ACCESS.md)
 
-*keywords: database, software, rpostgresql, rpostgis*
+***Keywords:** database, software, rpostgresql, rpostgis*
 
 * [extract environmental data](EXTRACT_ENVIRONMENTAL_DATA.md)
 
   * [points](EXTRACT_ENVIRONMENTAL_DATA.md)
   * [polygon](EXTRACT_ENVIRONMENTAL_DATA.md)
 
-*keywords: database, raster, spatial, R, postgresql, rpostgis, crop, mask, extract, buffer, transform, pgGetRast, pgGetBoundary*
+***Keywords:** database, raster, spatial, R, postgresql, rpostgis, crop, mask, extract, buffer, transform, pgGetRast, pgGetBoundary*
