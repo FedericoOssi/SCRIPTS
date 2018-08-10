@@ -40,7 +40,7 @@ pgPostGIS(con) # test connection
 ## grass
 
 **grass**  
-```grass
+```bash
 db.connect driver=pg database="host=eurodeer2.fmach.it,dbname=eurodeer_db,port=5432" 
 db.login user=<myname> pass=<mypass>
 db.tables
