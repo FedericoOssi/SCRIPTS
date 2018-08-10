@@ -12,7 +12,7 @@
 
 **psql**  
 ```psql
-v <- c(1:200) 
+psql -h eurodeer2.fmach.it -p 5432 -d eurodeer_db -U <myname>  
 ```
 
 ###### [-to content-](#content)
@@ -21,12 +21,16 @@ v <- c(1:200)
 
 **RPostgreSQL**  
 ```R
-v <- c(1:200) 
+library(RPostgreSQL)
+drv <- dbDriver("PostgreSQL")
+con <- dbConnect(drv, dbname="eurodeer_db", host="eurodeer2.fmach.it",port="5432", user="<myname>", password="<mypass>")
 ```
 
 **rpostgis**  
 ```R
-v <- c(1:200) 
+library(rpostgis)
+con <- dbConnect("PostgreSQL", dbname="eurodeer_db", host="eurodeer2.fmach.it", user="<myname>", password="<mypass>") 
+pgPostGIS(con) # test connection
 ```
 
 
@@ -37,7 +41,9 @@ v <- c(1:200)
 
 **grass**  
 ```grass
-v <- c(1:200) 
+db.connect driver=pg database="host=eurodeer2.fmach.it,dbname=eurodeer_db,port=5432" 
+db.login user=<myname> pass=<mypass>
+db.tables
 ```
 
 ###### [-to content-](#content)
