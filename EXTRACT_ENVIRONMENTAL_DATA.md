@@ -18,7 +18,7 @@ library(sp)
 library(rpostgis)
 
 ### connect to the database ###
-con <- dbConnect("PostgreSQL", dbname = "<databasename>", host="<host>", user="<myuser>", password="<mypass>")
+con <- dbConnect("PostgreSQL", dbname = "eurodeer_db", host="<host>", user="<myuser>", password="<mypass>")
 pgPostGIS(con) # test connection
 
 ### Points - Import ###  
