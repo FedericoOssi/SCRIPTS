@@ -11,7 +11,7 @@
 ## psql
 
 **psql**  
-```psql
+```bash
 psql -h eurodeer2.fmach.it -p 5432 -d eurodeer_db -U <myname>  
 ```
 
