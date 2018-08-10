@@ -2,15 +2,16 @@
 
 Here we describe how to extract environmental information from raster layers in R for points and polygons. The specific example is especially suited if local environmental data needs to be extracted from a large raster layer. This script shows the functionality of several spatial functions such as [pgGetGeom](https://www.rdocumentation.org/packages/rpostgis/versions/1.4.0/topics/pgGetGeom), [pgGetBoundary](https://www.rdocumentation.org/packages/rpostgis/versions/1.4.0/topics/pgGetBoundary), [spTransform](https://www.rdocumentation.org/packages/sp/versions/1.3-1/topics/spTransform), [buffer](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/buffer), [crop](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/crop), [mask](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/mask), [pgGetRast](https://www.rdocumentation.org/packages/rpostgis/versions/1.4.0/topics/pgGetRast) and [extract](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/extract). To extract values for spatial points efficiently, the area of interest should first be extracted through a crop and mask function in R. 
 
-The raster layer can be downloaded through the following link (many more maps for Europe are available for download): 
+The raster layer can be downloaded through the following link (many more raster layers for Europe are available for download): 
 * [TCD - Copernicus](https://land.copernicus.eu/pan-european/high-resolution-layers/forests/tree-cover-density/status-maps/view "High Resolution Layer Tree Cover Density")
+* This raster is also available in the eurodeer database, for populations with imported GPS and VHF data.  
 
 ## CONTENT 
 
   * [polygon](#polygon)
   * [points](#points)
 
-#### Import points, polygon and raster
+#### Import points and polygon from database 
 ```R
 ### Load packages ###
 library(raster)
