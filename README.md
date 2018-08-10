@@ -14,3 +14,8 @@ Each markdown (md) focusses on a certain topic:
   * [r](DATABASE_ACCESS.md)
   * [grass](DATABASE_ACCESS.md)
   * [qgis](DATABASE_ACCESS.md)
+
+* [extract environmental data](EXTRACT_ENVIRONMENTAL_DATA.md)
+
+  * [points](EXTRACT_ENVIRONMENTAL_DATA.md)
+  * [polygon](EXTRACT_ENVIRONMENTAL_DATA.md)
