@@ -1,6 +1,6 @@
 # Extract environmental data 
 
-Here we describe how to extract environmental information from raster layers in R for points and polygons. The specific example is especially suited if local environmental data needs to be extracted from a large raster layer. This script shows the functionality of several spatial functions such as [spTransform](https://www.rdocumentation.org/packages/sp/versions/1.3-1/topics/spTransform), [buffer](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/buffer), [crop](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/crop), [mask](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/mask) and [extract](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/extract). To extract values for spatial points efficiently, the area of interest should first be extracted through a crop and mask function in R. 
+Here we describe how to extract environmental information from raster layers in R for points and polygons. The specific example is especially suited if local environmental data needs to be extracted from a large raster layer. This script shows the functionality of several spatial functions such as [pgGetGeom](https://www.rdocumentation.org/packages/rpostgis/versions/1.4.0/topics/pgGetGeom), [pgGetBoundary](https://www.rdocumentation.org/packages/rpostgis/versions/1.4.0/topics/pgGetBoundary),[spTransform](https://www.rdocumentation.org/packages/sp/versions/1.3-1/topics/spTransform), [buffer](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/buffer), [crop](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/crop), [mask](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/mask) and [extract](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/extract). To extract values for spatial points efficiently, the area of interest should first be extracted through a crop and mask function in R. 
 
 The raster layer can be downloaded through the following link (many more maps for Europe are available for download): 
 * [TCD - Copernicus](https://land.copernicus.eu/pan-european/high-resolution-layers/forests/tree-cover-density/status-maps/view "High Resolution Layer Tree Cover Density")
@@ -18,16 +18,16 @@ library(sp)
 library(rpostgis)
 
 ### connect to the database ###
-con <- dbConnect("PostgreSQL", dbname = "eurodeer_db", host="eurodeer2.fmach.it", user="<myuser>", password="<mypass>")
+con <- dbConnect("PostgreSQL", dbname = "<databasename>", host="<host>", user="<myuser>", password="<mypass>")
 pgPostGIS(con) # test connection
 
 ### Points - Import ###  
-locs4326 <- pgGetGeom(con, c("temp","eurodeer_sample"), geom = "geom") # import gps locations
+locs4326 <- pgGetGeom(con, c("main","gps_data_animals"), geom = "geom", clauses = "WHERE animals_id in (1,2,3,4,5) and gps_validity_code = 1") # import gps locations
 head(locs@data) # view first rows 
 locs3035 <- spTransform(gpsdata,"+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs") # transform to SRID 3035
 
 ### Polygon - Import ### Extract a bounding box from the db using the corresponding gps locations 
-box4326 <- pgGetBoundary(con, c("temp","eurodeer_sample"), geom = "geom") # get bounding box in SRID 4326 (i.e., the reference system of the database) 
+box4326 <- pgGetBoundary(con, c("main","gps_data_animals"), geom = "geom", clauses = "WHERE animals_id in (1,2,3,4,5) and gps_validity_code = 1") # get bounding box in SRID 4326 (i.e., the reference system of the database) 
 box3035 <- spTransform(box4326,"+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs") # transform to SRID 3035
 pol <- buffer(box3035,500) # buffer of 500m around the box3035 - the polygon 
 
