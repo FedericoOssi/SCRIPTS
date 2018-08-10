@@ -2,14 +2,13 @@
 
 Here we describe how to extract environmental information from raster layers in R for points and polygons. The specific example is especially suited if local environmental data needs to be extracted from a large raster layer. This script shows the functionality of several spatial functions such as [spTransform](https://www.rdocumentation.org/packages/sp/versions/1.3-1/topics/spTransform), [buffer](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/buffer), [crop](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/crop), [mask](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/mask) and [extract](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/extract). To extract values for spatial points efficiently, the area of interest should first be extracted through a crop and mask function in R. 
 
-The raster layers can be downloaded through the following links: 
-* [DEM - Copernicus](https://land.copernicus.eu/pan-european/satellite-derived-products/eu-dem/eu-dem-v1-0-and-derived-products/view "Digital Elevation Model")
+The raster layer can be downloaded through the following link (many more maps for Europe are available for download): 
 * [TCD - Copernicus](https://land.copernicus.eu/pan-european/high-resolution-layers/forests/tree-cover-density/status-maps/view "High Resolution Layer Tree Cover Density")
 
 ## CONTENT 
 
-  * [polygon](#rpolygon)
-  * [points](#rpoints)
+  * [polygon](#polygon)
+  * [points](#points)
 
 #### Import points, polygon and raster
 ```R
@@ -35,13 +34,13 @@ pol <- buffer(box3035,500) # buffer of 500m around the box3035 - the polygon
 ### Raster - Import ###
 rast <- raster("forest_density.tif") # change the name and set the correct work directory where you stored the raster
 ```
-#### rpolygon
+#### polygon
 ```R
 ### Polygon - Extract ### 
 rast_c <- crop(rast, boundary) # crop the area using boundary
 rast_m <- mask(rast_c, boundary) # mask using boundary 
 ```
-#### rpoints 
+#### points 
 ```R
 ### Points - Extract ### 
 gpsdata@data$forest_density <- extract(rast_m, gpsdata3035) #extract raster values for gps locations and add to the data frame 
