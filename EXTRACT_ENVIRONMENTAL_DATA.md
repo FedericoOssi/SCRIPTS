@@ -15,8 +15,7 @@ The raster layers can be downloaded through the following links:
   * [rpoints](#rpoints)
 
 ## r
-
-# Import points, polygon and raster
+#### Import points, polygon and raster
 ```R
 ### Load packages ###
 library(raster)
@@ -40,15 +39,13 @@ pol <- buffer(box3035,500) # buffer of 500m around the box3035 - the polygon
 ### Raster - Import ###
 rast <- raster("forest_density.tif") # change the name and set the correct work directory where you stored the raster
 ```
-
-# rpolygon
+#### rpolygon
 ```R
 ### Polygon - Extract ### 
 rast_c <- crop(rast, boundary) # crop the area using boundary
 rast_m <- mask(rast_c, boundary) # mask using boundary 
 ```
-
-# rpoints 
+#### rpoints 
 ```R
 ### Points - Extract ### 
 gpsdata@data$forest_density <- extract(rast_m, gpsdata3035) #extract raster values for gps locations and add to the data frame 
