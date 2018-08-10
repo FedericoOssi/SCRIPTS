@@ -8,16 +8,15 @@
 * [qgis](#qgis)
 
 
-## psql
+#### psql
 
-**psql**  
 ```bash
 psql -h eurodeer2.fmach.it -p 5432 -d eurodeer_db -U <myname>  
 ```
 
 ###### [-to content-](#content)
 
-## r
+#### r
 
 **RPostgreSQL**  
 ```R
@@ -37,9 +36,8 @@ pgPostGIS(con) # test connection
 
 ###### [-to content-](#content)
 
-## grass
+#### grass
 
-**grass**  
 ```bash
 db.connect driver=pg database="host=eurodeer2.fmach.it,dbname=eurodeer_db,port=5432" 
 db.login user=<myname> pass=<mypass>
@@ -48,7 +46,7 @@ db.tables
 
 ###### [-to content-](#content)
 
-## qgis
+#### qgis
 
 **qgis**  
 
