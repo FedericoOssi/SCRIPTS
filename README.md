@@ -10,6 +10,7 @@ Each markdown (md) focusses on a certain topic:
 
 ***Keywords:** HRE, adehabitatHR, move, polygons*
 
+
 * [database access](DATABASE_ACCESS.md)
 
   * [psql](DATABASE_ACCESS.md)
@@ -18,6 +19,7 @@ Each markdown (md) focusses on a certain topic:
   * [qgis](DATABASE_ACCESS.md)
 
 ***Keywords:** database, software, rpostgresql, rpostgis*
+
 
 * [extract environmental data](EXTRACT_ENVIRONMENTAL_DATA.md)
 
