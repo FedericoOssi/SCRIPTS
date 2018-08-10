@@ -11,7 +11,7 @@
 #### psql
 
 ```bash
-psql -h <host> -p <port> -d eurodeer_db -U <myname>  
+psql -h <host> -p 5432 -d eurodeer_db -U <myname>  
 ```
 
 ###### [-to content-](#content)
