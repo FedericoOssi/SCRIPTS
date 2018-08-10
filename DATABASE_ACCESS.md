@@ -11,7 +11,7 @@
 #### psql
 
 ```bash
-psql -h eurodeer2.fmach.it -p 5432 -d eurodeer_db -U <myname>  
+psql -h <host> -p <port> -d eurodeer_db -U <myname>  
 ```
 
 ###### [-to content-](#content)
@@ -22,13 +22,13 @@ psql -h eurodeer2.fmach.it -p 5432 -d eurodeer_db -U <myname>
 ```R
 library(RPostgreSQL)
 drv <- dbDriver("PostgreSQL")
-con <- dbConnect(drv, dbname="eurodeer_db", host="eurodeer2.fmach.it",port="5432", user="<myname>", password="<mypass>")
+con <- dbConnect(drv, dbname="eurodeer_db", host="<host>",port="5432", user="<myname>", password="<mypass>")
 ```
 
 **rpostgis**  
 ```R
 library(rpostgis)
-con <- dbConnect("PostgreSQL", dbname="eurodeer_db", host="eurodeer2.fmach.it", user="<myname>", password="<mypass>") 
+con <- dbConnect("PostgreSQL", dbname="eurodeer_db", host="5432", user="<myname>", password="<mypass>") 
 pgPostGIS(con) # test connection
 ```
 
@@ -39,7 +39,7 @@ pgPostGIS(con) # test connection
 #### grass
 
 ```bash
-db.connect driver=pg database="host=eurodeer2.fmach.it,dbname=eurodeer_db,port=5432" 
+db.connect driver=pg database="host=<host>,dbname=eurodeer_db,port=5432" 
 db.login user=<myname> pass=<mypass>
 db.tables
 ```
