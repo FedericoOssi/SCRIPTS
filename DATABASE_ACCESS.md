@@ -49,3 +49,6 @@ db.tables
 **qgis**  
 
 ###### [-to content-](#content)
+
+###### [-to read me](README.md)
+
