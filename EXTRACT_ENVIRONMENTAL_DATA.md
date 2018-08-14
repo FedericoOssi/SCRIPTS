@@ -48,3 +48,6 @@ rast_m <- pgGetRast(con, c("env_data", "forest_density"), boundary = pol)
 ### Points - Extract ### 
 gpsdata@data$forest_density <- extract(rast_m, gpsdata3035) #extract raster values for gps locations and add to the data frame 
 ```
+
+
+###### [-to read me](README.md)
