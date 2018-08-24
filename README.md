@@ -26,4 +26,4 @@ Each markdown (md) focusses on a certain topic:
   * [points](EXTRACT_ENVIRONMENTAL_DATA.md)
   * [polygon](EXTRACT_ENVIRONMENTAL_DATA.md)
 
-***Keywords:** database, raster, spatial, R, postgresql, rpostgis, crop, mask, extract, buffer, transform, pgGetRast, pgGetBoundary*
+***Keywords:** database, raster, spatial, R, postgresql, rpostgis, crop, mask, extract, buffer, transform, pgGetRast, pgGetBoundary, intersection*
