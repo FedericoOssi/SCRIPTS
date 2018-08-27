@@ -14,7 +14,7 @@ The theoretical difference increased with increasing slope and with increasing r
 
 The following files are included:
 
-* [SCRIPTS/Students_work/Marrit/Difference between 3D and 2D steplength for roe deer in alpine and relatively flat studyareas](Difference between 3D and 2D steplength for roe deer in alpine and relatively flat studyareas.md)
+* [SCRIPTS/Students_work/Marrit/Difference between 3D and 2D steplength for roe deer in alpine and relatively flat studyareas.md](Difference between 3D and 2D steplength for roe deer in alpine and relatively flat studyareas)
 
 This code is used in the empirical part of the BSc thesis, and contains the analysis of the roe deer movement data. The studyareas were located in Germany (low relief, studyarea 15 in the EURODEER database) and Switzerland (high relief, studyarea 25 in the EURODEER database). 
 ### SQLcode: 
