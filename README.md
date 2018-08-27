@@ -1,5 +1,5 @@
 # SCRIPTS
-In this github account we store all useful scripts to perform analysis with animal tracking data and all students useful scripts ([students_work](students_work/README.md)).
+In this github account we store all useful scripts to perform analysis with animal tracking data and all students useful scripts ([students_work](Students_work/README.md)).
 
 Each markdown (md) focusses on a certain topic: 
 
