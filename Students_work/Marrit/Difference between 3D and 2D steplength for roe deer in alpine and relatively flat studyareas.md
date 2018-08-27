@@ -1,5 +1,5 @@
 
-In this script the difference between 2D and 3D step length of real roe deer movement data is calculated. 
+In this script the difference between 2D and 3D step length of real roe deer movement data is calculated, I used data from Germany (studyarea 15 in the eurodeer database) and Switzerland (studyarea 25 in the database). 
 
 
 ```{r}
