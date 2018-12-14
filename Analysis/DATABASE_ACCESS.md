@@ -27,12 +27,36 @@ drv <- dbDriver("PostgreSQL")
 con <- dbConnect(drv, dbname="eurodeer_db", host="<host>",port="5432", user="<myname>", password="<mypass>")
 ```
 
+# Import from postgresql to R with RPostgreSQL
+## NOTE THAT TIMESTAMPS AND NUMBERS IN DOUBLE PRECISION, SUCH AS COORDINATES (Lon/Lat) NEED TO BE CONVERTED INTO CHARACTER STRINGS WITHIN THE QUERY. OTHERWISE TIMESTAMPS ARE SHIFTED AND COORDINATES ARE ROUNDED!!!!!!! 
+
+```R
+
+# QUERY
+q <- paste0("SELECT gps_data_animals_id, geom, a.animals_id, gps_sensors_id, acquisition_time::character varying, longitude::character varying, latitude::character varying FROM main.gps_data_animals a WHERE animals_id = 1 AND gps_validity_code = 1 ORDER BY animals_id, gps_sensors_id, acquisition_time")
+
+# GET DATA
+rs <- dbSendQuery(conn=con, q)
+data <- fetch(rs,-1)
+dbClearResult(rs) 
+```
+
 **rpostgis**  
 ```R
 library(rpostgis)
 con <- dbConnect("PostgreSQL", dbname="eurodeer_db", host="<host>", user="<myname>", password="<mypass>") 
 pgPostGIS(con) # test connection
 ```
+
+# Import from postgresql to R with rpostgis
+```R
+
+# QUERY
+q <- paste0("SELECT gps_data_animals_id, geom, a.animals_id, gps_sensors_id, acquisition_time::character varying, longitude::character varying, latitude::character varying FROM main.gps_data_animals a WHERE animals_id = 1 AND gps_validity_code = 1 ORDER BY animals_id, gps_sensors_id, acquisition_time")
+
+# GET SPATIAL DATA 
+d <- pgGetGeom(conn=con, query=q)
+
 ###### [-to content-](#content)
 
 #### grass
