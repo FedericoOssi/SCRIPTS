@@ -51,9 +51,10 @@ pgPostGIS(con) # test connection
 ```
 
 # Import from postgresql to R with rpostgis
-```R
+
 #### NOTE THAT TIMESTAMPS AND NUMBERS IN DOUBLE PRECISION, SUCH AS COORDINATES (Lon/Lat) NEED TO BE CONVERTED INTO CHARACTER STRINGS WITHIN THE QUERY. OTHERWISE TIMESTAMPS ARE SHIFTED AND COORDINATES ARE ROUNDED!!!!!!! 
 
+```R
 # QUERY
 q <- paste0("SELECT gps_data_animals_id, geom, a.animals_id, gps_sensors_id, acquisition_time::character varying, longitude::character varying, latitude::character varying FROM main.gps_data_animals a WHERE animals_id = 1 AND gps_validity_code = 1 ORDER BY animals_id, gps_sensors_id, acquisition_time")
 
