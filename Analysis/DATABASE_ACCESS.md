@@ -30,12 +30,9 @@ con <- dbConnect(drv, dbname="eurodeer_db", host="<host>",port="5432", user="<my
 # Import from postgresql to R with RPostgreSQL
 
 ```diff
-- #### NOTE THAT TIMESTAMPS AND NUMBERS IN DOUBLE PRECISION, SUCH AS COORDINATES (Lon/Lat) NEED TO BE CONVERTED INTO CHARACTER STRINGS WITHIN THE QUERY. OTHERWISE TIMESTAMPS ARE SHIFTED AND COORDINATES ARE ROUNDED!!!!!!! 
+- #### NOTE THAT TIMESTAMPS AND NUMBERS IN DOUBLE PRECISION, SUCH AS COORDINATES (Lon/Lat) \n NEED TO BE CONVERTED INTO CHARACTER STRINGS WITHIN THE QUERY. OTHERWISE TIMESTAMPS ARE SHIFTED AND COORDINATES ARE ROUNDED!!!!!!! 
 ```
-<span style="color:red;">Word up</span>
-```HTML
-<p style='color:red'>This is some red text.</p>
-```
+
 
 ```R
 
