@@ -60,6 +60,7 @@ q <- paste0("SELECT gps_data_animals_id, geom, a.animals_id, gps_sensors_id, acq
 
 # GET SPATIAL DATA 
 d <- pgGetGeom(conn=con, query=q)
+```
 
 ###### [-to content-](#content)
 
