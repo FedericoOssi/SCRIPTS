@@ -28,3 +28,15 @@ raster::plot(Italy)
 ```
 
 #### Computing
+Terrain Characteristics
+
+```r
+library(raster)
+
+DEM <- raster("DEM.tif")
+terrain(DEM, 
+
+
+
+terrain(elevation, opt=c('slope', 'aspect'), unit='degrees')
+plot(x)
