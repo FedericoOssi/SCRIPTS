@@ -28,7 +28,8 @@ raster::plot(Italy)
 ```
 
 #### Computing
-Terrain Characteristics
+
+**Terrain Characteristics**
 
 With the function terrain() in the package _raster_ is it possible to compute: 
 * slope 
@@ -44,5 +45,23 @@ library(raster)
 DEM <- raster("DEM.tif")
 slope <- terrain(DEM, opt = 'slope', unit='radians', neighbors=8, filename= "slope.tif")
 raster::plot(slope)
+```
+
+
+**Heat Load Index**
+
+Equations for potential annual direct incident radiation and heat load:
+
+```r
+library(raster)
+library(spatialEco)
+
+DEM <- raster("DEM.tif")
+heat_load <- hli(DEM)
+
+# Visual comparison of the outputs (Digital Elevation Model vs. Heat Load map)
+par(mfrow=c(1:2))
+raster::plot(DEM)
+raster::plot(heat_load)
 ```
 
