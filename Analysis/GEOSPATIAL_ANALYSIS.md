@@ -30,13 +30,19 @@ raster::plot(Italy)
 #### Computing
 Terrain Characteristics
 
+With the function in the package _raster_ is it possible to compute: 
+* slope 
+* aspect
+* TPI (Topographic Position Index) 
+* TRI (Terrain Ruggedness Index)
+* roughness (as the difference between the max and the min value of a cell and its surrounding cells)
+* flowdir ('flow direction' (of water), namely the direction of the greatest drop in elevation)
+
 ```r
 library(raster)
 
 DEM <- raster("DEM.tif")
-terrain(DEM, 
+slope <- terrain(DEM, opt = 'slope', unit='radians', neighbors=8, filename= "slope.tif")
+raster::plot(slope)
+```
 
-
-
-terrain(elevation, opt=c('slope', 'aspect'), unit='degrees')
-plot(x)
