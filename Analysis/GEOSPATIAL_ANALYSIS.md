@@ -30,7 +30,7 @@ raster::plot(Italy)
 #### Computing
 Terrain Characteristics
 
-With the function in the package _raster_ is it possible to compute: 
+With the function terrain() in the package _raster_ is it possible to compute: 
 * slope 
 * aspect
 * TPI (Topographic Position Index) 
