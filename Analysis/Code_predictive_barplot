@@ -1,0 +1,27 @@
+#Extract predictions of your model
+pred <- predict(Model20,type="response")
+
+#join with the dataframes, each for quantile distribution
+data <- cbind(db, pred)
+
+With this, you then have a dataframe with a column with your predictions. At this stage, it is possible to generate whatever kind of plot you prefer more, for instance I attach the code that I use to generate a barplot with 2 panels, eahc of them with predictions in function of two dummy covariates:
+
+library(ggplot2)
+library(gridExtra)
+theme_update(plot.title = element_text(hjust = 0.5)) 
+a <- ggplot(data, aes(x=data$eating_fact, y=data$pred), fill=data$eating_fact) +
+  geom_boxplot(alpha=0.4) +
+  stat_summary(fun.y=mean, geom="point", shape=20, size=5, color="red", fill="red") +
+  theme(legend.position="none") +
+  scale_fill_brewer(palette="Set3") +
+  labs(size= "data$pred", x = "Other roe deer eating", y = "Predicted occurrence of a long visit to feeding sites", 
+  title = "Probability of long visits when other roe deer are eating")
+b <- ggplot(data, aes(x=data$presence_fact, y=data$pred), fill=data$presence_fact) +
+  geom_boxplot(alpha=0.4) +
+  stat_summary(fun.y=mean, geom="point", shape=20, size=5, color="red", fill="red") +
+  theme(legend.position="none") +
+  scale_fill_brewer(palette="Set3") +
+  labs(size= "data$pred", x = "Presence of other roe deer", y = "Predicted occurrence of a long visit to feeding sites", 
+  title = "Probability of long visits in presence of other roe deer")
+
+grid.arrange(b, a, ncol=2)
